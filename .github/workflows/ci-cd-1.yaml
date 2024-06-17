@@ -20,12 +20,12 @@ jobs:
 
     - name: Copy files to EC2
       run: |
-        scp -o StrictHostKeyChecking=no -r . ubuntu@23.21.4.208/home/ubuntu/Nest-app01
+        scp -o StrictHostKeyChecking=no -r . ubuntu@23.21.4.208/home/ubuntu/
 
     - name: SSH and deploy
       run: |
         ssh -o StrictHostKeyChecking=no ubuntu@23.21.4.208 << 'EOF'
-        cd /home/ubuntu/Nest-app01
+        cd /home/ubuntu/
         npm install
         npm run build
         npm run start
